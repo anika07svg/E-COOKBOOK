@@ -96,7 +96,4 @@ def createProfile(request):
     }
     return render(request, 'CustomerManagement/editCustomer_Profile.html', context)
 
-def abouts(request):
-    return render(request, 'CustomerManagement/about.html')
-
 

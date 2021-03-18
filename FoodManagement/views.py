@@ -126,21 +126,6 @@ def bkash_order(request, food_id):
     #return HttpResponseRedirect(reverse('cart'))
     return redirect('cart')
 
-
-@login_required
-def make_order(request, food_id):
-    food = get_object_or_404(Food, id=food_id)
-    order = Order(user=request.user, food=food)
-    order.save()
-    print("Order done!")
-
-    cart = Cart.objects.get(user=request.user)
-    cart.food.remove(food)
-    cart.save()
-    print("Remove done!")
-
-    return redirect('cart')
-
 @login_required
 def update_cart(request, food_id):
 
@@ -206,7 +191,7 @@ def review_after_complete(request, food_id):
             searched_food.reviews.add(instance)
             searched_food.save()
 
-            return redirect('my-order')
+            return redirect('my-orders')
 
     context = {
         'search': searched_food,

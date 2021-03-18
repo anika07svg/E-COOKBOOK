@@ -55,7 +55,7 @@
       </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{% url 'my-order' %}">My Order</a>
+        <a class="nav-link" href="{% url 'my_order' %}">My Order</a>
       </li>
     <li class="nav-item">
         <a class="nav-link" href="{% url 'cart' %}">Cart</a>
@@ -81,10 +81,10 @@
       </li>
 
              <li class="nav-item">
-    <a class="nav-link" href="{% url 'customer_registration' %}">Sign Up</a><br>
+    <a href="{% url 'customer_registration' %}">Sign Up</a><br>
             </li>
             <li class="nav-item">
-    <a class="nav-link" href="{% url 'login' %}">Login</a><br>
+    <a href="{% url 'login' %}">Login</a><br>
              </li>
 {% endif %}
 
@@ -103,19 +103,14 @@
 
 </nav>
 
-
-
 {% block content %}
 
 {% endblock content %}
-
-
-    <br>
-
-    <a href="javascript:history.back()">Go Back</a>
-
 <br>
-
+<br>
+<br>
+<br>
+<br>
 
 
  <footer class="ftco-footer ftco-section" style="background-color: #87CEEB">
@@ -123,7 +118,7 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2"><a href="{% url 'abouts' %}">About</a></h2>
+              <h2 class="ftco-heading-2">About</h2>
               <p> <h6> Are you looking for best food in town?</h6> Then your search ends here.
                 Get delicious fresh homemade food from our website.
 

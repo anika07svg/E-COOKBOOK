@@ -41,9 +41,7 @@
         <form method="POST">
             {% csrf_token %}
             {{ form | crispy }}
-
-            <button type="submit">Review</button>
-
+            <button type="submit" class="btn btn-outline-success">Submit</button>
         </form>
         {% else %}
             <h2>You have already submitted a review</h2>
