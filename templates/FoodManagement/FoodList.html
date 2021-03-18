@@ -1,0 +1,42 @@
+{% extends 'customer_base.html' %}
+{% load static %}
+
+
+{% block content %}
+<br><br>
+    <h2>Foods</h2>
+
+    <div class="row row-cols-1 row-cols-md-3">
+
+        {% for f in Food %}
+
+
+        <div class="col mb-4">
+          <div class="card h-100" >
+            <img src="{{ f.Food_Image.url }}"class="card-img-top" height="350" width="200" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Food name:{{ f.Food_Name }}</h5>
+              <p class="card-text">
+                  <h3> Price:{{ f.Food_Price }}</h3>
+              </p>
+
+                {# http://127.0.0.1:8000/products/    #}
+                <a href="{{ f.id }}">
+                    {# http://127.0.0.1:8000/products/product_id    #}
+                    <button type="button" class="btn btn-outline-primary">Details</button>
+                </a>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+
+
+    </div>
+
+    <div>
+
+
+    </div>
+
+{% endblock content %}

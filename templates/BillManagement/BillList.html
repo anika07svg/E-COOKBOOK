@@ -1,0 +1,12 @@
+{% extends 'merchant_base.html' %}
+
+{% block content %}
+
+    {% for b in Bill %}
+        <h2>Bill info:  {{ b.id }} </h2>
+        {{ b.Payment_Type }} <br>
+        {{ b.Total_Price}} <br>
+
+    {% endfor %}
+
+{% endblock content %}

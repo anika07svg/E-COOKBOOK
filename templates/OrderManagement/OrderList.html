@@ -1,0 +1,13 @@
+{% extends 'merchant_base.html' %}
+
+{% block content %}
+
+    {% for o in Order %}
+        <h2>Order info:  {{ o.id }} </h2>
+        {{ o.status}} <br>
+        {{ o.payment_options}} <br>
+        {{ o.transaction_id}} <br>
+
+    {% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends 'merchant_base.html' %}
+
+{% block content %}
+    <br>
+    <br>
+
+    <div class="col d-flex justify-content-center">
+
+
+    <div class="card text-white bg-info mb-6" style="max-width: 540px;">
+        <div class="card-header"><h3 style="color: indigo">My Profile </h3></div>
+        <hr style="color: white">
+
+    <div class="col-md-4">
+      <img src="{{ Merchant.Profile_pic.url }}" height="350" width="300">
+    </div>
+
+      <div class="card-body">
+
+          <h3 class="card-title"> Name : {{ Merchant.Merchant_Name}}</h3> <hr>
+          <h6> Food Name : {{ Merchant.M_Food_Name}}</h6><hr>
+          <h6> Business Name: {{ Merchant.Business_Name}}</h6><hr>
+          <h6> NID: {{ Merchant.NID}}</h6><hr>
+          <h6> Contact : {{ Merchant.Phone_Number}}</h6><hr>
+          <h6> Address: {{ Merchant.Address}}</h6><hr>
+
+      </div>
+
+  </div>
+  </div>
+    </div>
+
+{% endblock content %}

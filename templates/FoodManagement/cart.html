@@ -1,0 +1,60 @@
+{% extends 'customer_base.html' %}
+
+{% block content  %}
+
+
+
+
+        {% for search in cart.food.all %}
+
+
+
+
+       <div class="card bg-light mb-2`" >
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{ search.Food_Image.url }}" class="card-img" alt="...">
+        </div>
+
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3 class="card-title">Food Name : {{ search.Food_Name }}</h3>
+            <p class="card-text">
+
+                            <h4>Food ID : {{ search.Food_id }}</h4>
+                            <h5> Price : {{ search.Food_Price }}</h5>
+                            <h5> Category : {{ search.Food_Category }}</h5>
+
+                        </p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+              <h4>Option 1: <a href="{% url 'order-food' search.id %}" >Payment on delivery</a> <br></h4>
+
+
+        <h4>Option 2:<a href="{% url 'order-food' search.id %}" >Order on Bkash</a> <br></h4>
+              <form action="{% url 'bkash-order-food' search.id %}" method="POST">
+                  {% csrf_token %}
+                  <input name="transaction_id" type="text" placeholder="Bkash transaction ID" required>
+                  <button type="submit" class="btn btn-primary">Order with Bkash</button>
+              </form>
+
+
+              <a href="{% url 'delete-from-cart' search.id %}" >Remove</a>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+        {% endfor %}
+
+    <h2>Total: {{ total }}</h2>
+
+
+
+
+
+{% endblock content %}
